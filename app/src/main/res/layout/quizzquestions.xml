@@ -1,17 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
+    android:id="@+id/trueButton"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".QuizzquestionsActivity">
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/quizzQuestions"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TextView"
+        android:text="QizzQuestions"
+        android:textSize="22sp"
+        android:layout_gravity="center_horizontal"
         tools:layout_editor_absoluteX="206dp"
         tools:layout_editor_absoluteY="292dp" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/feedBackQuestions"
+        android:layout_width="60dp"
+        android:layout_height="45dp"
+        android:text=""
+        android:layout_gravity="center"
+        tools:layout_editor_absoluteX="187dp"
+        tools:layout_editor_absoluteY="285dp" />
+
+    <Button
+        android:id="@id/trueButton"
+        android:layout_width="23dp"
+        android:layout_gravity="bottom"
+        android:layout_height="20dp"
+        android:text="True" />
+
+    <Button
+        android:id="@id/falseButton"
+        android:layout_width="40dp"
+        android:layout_gravity="center_vertical"
+        android:layout_height="40dp"
+        android:text="False" />
+
+    <Button
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:id="@id/nextPage"
+        android:layout_gravity="end"
+        android:text="Next"
+        android:enabled="false"/>
+
+
+</LinearLayout>
