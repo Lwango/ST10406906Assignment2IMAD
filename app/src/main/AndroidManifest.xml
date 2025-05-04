@@ -13,6 +13,9 @@
         android:theme="@style/Theme.ST10406906Assignment2IMAD"
         tools:targetApi="31">
         <activity
+            android:name=".Scoreactivity"
+            android:exported="false" />
+        <activity
             android:name=".QuizzquestionsActivity"
             android:exported="true" />
         <activity
