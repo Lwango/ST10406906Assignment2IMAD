@@ -1,46 +1,54 @@
 package za.co.varsitycollege.st10466906.st10406906assignment2imad
 
 import android.os.Bundle
-import android.view.inputmethod.TextAttribute
+import android.content.Intent
 import android.widget.Button
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 
-class QuizzquestionsActivity : AppCompatActivity() {
-    private val quizzQuestions= arrayOf(
-     "is 1 + 1 =2?","is 2 an odd number?","are there 100 googl in a zero?","is 100 divisbale by 2?","is 10 larger than 9?"
+class QuizQuestionsActivity : AppCompatActivity() {
+
+    private val questions = arrayOf(
+        "Is 1 + 1 = 2?",
+        "Is 2 an odd number?",
+        "Are there 100 zeros in a googol?",
+        "Is 100 divisible by 2?",
+        "Is 10 larger than 9?"
     )
-    private val answers = booleanArrayOf(true,false,true,true,true)
+//added my list of questions to my array//
+    private val answers = booleanArrayOf(true, false, true, true, true)
     private var currentIndex = 0
     private var score = 0
-    private lateinit var quizzQuestions:TextView
-    private lateinit var feedBackQuestions:TextView
-    private lateinit var nextPage:Button
-    private lateinit var trueButton:Button
-    private lateinit var falseButton:Button
 
+    private lateinit var questionTextView: TextView
+    private lateinit var feedbackTextView: TextView
+    private lateinit var nextPage: Button
+    private lateinit var trueButton: Button
+    private lateinit var falseButton: Button
+//declaring none null variables//
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.quizzquestions)
-        quizzQuestions = findViewById(R.id.quizzQuestions)
-        feedBackQuestions = findViewById(R.id.feedBackQuestions)
+
+        questionTextView = findViewById(R.id.mathQuestions)
+        feedbackTextView = findViewById(R.id.feedBackQuestions)
         nextPage = findViewById(R.id.nextPage)
         falseButton = findViewById(R.id.falseButton)
         trueButton = findViewById(R.id.trueButton)
+
         loadQuestion()
+
         trueButton.setOnClickListener { handleAnswer(true) }
         falseButton.setOnClickListener { handleAnswer(false) }
-
+    //adding buttons for true and false questions//
         nextPage.setOnClickListener {
             currentIndex++
-            if (currentIndx < questions.size) {
+            if (currentIndex < questions.size) {
                 loadQuestion()
             } else {
-                val intent = Intent(this,ScoreActivity::class.java)
+                val intent = Intent(this, Scoreactivity::class.java)
                 intent.putExtra("score", score)
                 intent.putExtra("questions", questions)
                 intent.putExtra("answers", answers)
@@ -48,32 +56,27 @@ class QuizzquestionsActivity : AppCompatActivity() {
                 finish()
             }
         }
+    }
+
     private fun loadQuestion() {
-        quizzQuestions.text = questions[currentIndex]
-        feedBackQuestions.text = ""
-        nextPage.isEnabled = false
+        questionTextView.text = questions[currentIndex]
+        feedbackTextView.text = ""
         trueButton.isEnabled = true
         falseButton.isEnabled = true
+        nextPage.isEnabled = false
     }
+
     private fun handleAnswer(userAnswer: Boolean) {
         val correctAnswer = answers[currentIndex]
         if (userAnswer == correctAnswer) {
-            feedBackQuestions = "Correct"
+            feedbackTextView.text = "Correct"
             score++
         } else {
-            feedBackQuestions.text = "Incorrect"
-
+            feedbackTextView.text = "Incorrect"
         }
+
         trueButton.isEnabled = false
-        falseButton.isEnabled = true
+        falseButton.isEnabled = false
         nextPage.isEnabled = true
-
-
-
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.trueButton)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
-        }
     }
 }

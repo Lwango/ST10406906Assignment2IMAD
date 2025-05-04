@@ -9,10 +9,10 @@
     tools:context=".QuizzquestionsActivity">
 
     <TextView
-        android:id="@+id/quizzQuestions"
+        android:id="@+id/mathQuestions"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="QizzQuestions"
+        android:text="Questions"
         android:textSize="22sp"
         android:layout_gravity="center_horizontal"
         tools:layout_editor_absoluteX="206dp"
