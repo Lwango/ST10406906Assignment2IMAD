@@ -14,7 +14,7 @@ class MainActivity : AppCompatActivity() {
         enableEdgeToEdge()
         setContentView(R.layout.activity_main)
         val begin: Button = findViewById<Button>(R.id.begin)
-        begin.setOnClickListener { val intent = Intent(this,QuizzquestionsActivity::class.java)
+        begin.setOnClickListener { val intent = Intent(this,QuizQuestionsActivity::class.java)
         startActivity(intent)
 //added button to direct user to the next page//
             ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.trueButton)) { v, insets ->

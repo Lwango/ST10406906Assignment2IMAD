@@ -16,7 +16,7 @@
             android:name=".Scoreactivity"
             android:exported="false" />
         <activity
-            android:name=".QuizzquestionsActivity"
+            android:name=".QuizQuestionsActivity"
             android:exported="true" />
         <activity
             android:name=".MainActivity"

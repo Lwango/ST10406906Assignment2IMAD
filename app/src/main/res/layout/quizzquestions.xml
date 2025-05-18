@@ -1,53 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/trueButton"
+    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".QuizzquestionsActivity">
+    android:gravity="center"
+    android:padding="16dp"
+    tools:context=".QuizQuestionsActivity">
 
     <TextView
         android:id="@+id/mathQuestions"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Questions"
+        android:text="Question"
         android:textSize="22sp"
-        android:layout_gravity="center_horizontal"
-        tools:layout_editor_absoluteX="206dp"
-        tools:layout_editor_absoluteY="292dp" />
+        android:layout_marginBottom="24dp" />
 
     <TextView
         android:id="@+id/feedBackQuestions"
-        android:layout_width="60dp"
-        android:layout_height="45dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:text=""
-        android:layout_gravity="center"
-        tools:layout_editor_absoluteX="187dp"
-        tools:layout_editor_absoluteY="285dp" />
+        android:textSize="18sp"
+        android:layout_marginBottom="24dp" />
 
     <Button
-        android:id="@id/trueButton"
-        android:layout_width="23dp"
-        android:layout_gravity="bottom"
-        android:layout_height="20dp"
-        android:text="True" />
+        android:id="@+id/trueButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="True"
+        android:layout_marginBottom="16dp" />
 
     <Button
-        android:id="@id/falseButton"
-        android:layout_width="40dp"
-        android:layout_gravity="center_vertical"
-        android:layout_height="40dp"
-        android:text="False" />
+        android:id="@+id/falseButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="False"
+        android:layout_marginBottom="24dp" />
 
     <Button
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:id="@id/nextPage"
-        android:layout_gravity="end"
+        android:id="@+id/nextPage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:text="Next"
-        android:enabled="false"/>
-
+        android:enabled="false" />
 
 </LinearLayout>

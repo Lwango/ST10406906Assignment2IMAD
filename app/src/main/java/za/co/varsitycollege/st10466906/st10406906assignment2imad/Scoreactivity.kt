@@ -1,5 +1,6 @@
 package za.co.varsitycollege.st10466906.st10406906assignment2imad
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
@@ -25,7 +26,7 @@ class Scoreactivity : AppCompatActivity() {
         val reviewButton = findViewById<Button>(R.id.reviewButton)
 
         theScore.text = "You got $score out of ${questions.size}"
-        feedBackQuestions.text = if (score >= 3) "Congrats Mfethu" else "This is embarassing dawg."
+        feedBackQuestions.text = if (score >= 3) "Congrats Mfethu" else "This is embarrassing dawg."
 
         reviewButton.setOnClickListener {
             val reviewMsg = buildString {
